@@ -36,9 +36,9 @@ export default function DocumentsPage() {
         </h1>
 
         <p style={{ marginTop: 14, opacity: 0.7, lineHeight: 1.6, maxWidth: 820 }}>
-          This page provides public-facing disclosures and model descriptions for MatrixOS, Matrix
-          One, and SIMPLE. Documents are versioned and subject to change. Nothing here is legal,
-          tax, or investment advice.
+          This page provides public-facing disclosures and model descriptions for
+          MatrixOS, Matrix One, and SIMPLE. Documents are versioned and subject
+          to change. Nothing here is legal, tax, or investment advice.
         </p>
 
         <div
@@ -67,8 +67,9 @@ export default function DocumentsPage() {
               INTERNAL LEDGER MODEL (V1)
             </h2>
             <p style={{ marginTop: 10, opacity: 0.65, lineHeight: 1.55, fontSize: 13 }}>
-              SIMPLE balances represent economic exposure tracked on an internal ledger. The device
-              does not present external wallet addresses or on-chain custody surfaces in V1.
+              SIMPLE balances represent economic exposure tracked on an internal
+              ledger. The device does not present external wallet addresses or
+              on-chain custody surfaces in V1.
             </p>
           </section>
 
@@ -83,8 +84,8 @@ export default function DocumentsPage() {
               WHAT USERS RECEIVE (V1)
             </h2>
             <p style={{ marginTop: 10, opacity: 0.65, lineHeight: 1.55, fontSize: 13 }}>
-              Internal execution experience, internal records, and a controlled settlement posture
-              for supported assets—subject to tier, jurisdiction, and availability.
+              A constrained on-device execution interface, internal records, and
+              controlled settlement behavior for supported functionality in V1.
             </p>
           </section>
 
@@ -99,8 +100,9 @@ export default function DocumentsPage() {
               WHAT USERS DO NOT RECEIVE (V1)
             </h2>
             <p style={{ marginTop: 10, opacity: 0.65, lineHeight: 1.55, fontSize: 13 }}>
-              No on-device external deposit addresses. No direct external chain receive. No claims
-              of “unhackable” or “military-grade.” No guarantees of availability or redemption time.
+              No on-device external deposit addresses. No direct external chain
+              receive. No claims of “unhackable” or “military-grade.” No
+              guarantees of availability or redemption time.
             </p>
           </section>
 
@@ -112,11 +114,10 @@ export default function DocumentsPage() {
             }}
           >
             <h2 style={{ margin: 0, fontSize: 12, letterSpacing: "0.25em", opacity: 0.85 }}>
-              TERMS / PRIVACY (PLACEHOLDERS)
+              CONTACT
             </h2>
             <p style={{ marginTop: 10, opacity: 0.65, lineHeight: 1.55, fontSize: 13 }}>
-              Terms of Use (placeholder). Privacy Policy (placeholder). Risk Disclosures
-              (placeholder). Regulatory posture is described without claims of approval.
+              Document corrections and inquiries: info@matrixos.io
             </p>
           </section>
         </div>

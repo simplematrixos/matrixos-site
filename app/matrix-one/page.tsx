@@ -66,8 +66,8 @@ export default function MatrixOnePage() {
               PURPOSE
             </h2>
             <p style={{ marginTop: 10, opacity: 0.65, lineHeight: 1.55, fontSize: 13 }}>
-              A single-purpose execution instrument that boots directly into SIMPLE. No app installs.
-              No multitasking. No consumer OS clutter.
+              A single-purpose execution instrument that boots into SIMPLE. No app installs.
+              No multitasking. No general-purpose OS surface.
             </p>
           </section>
 
@@ -82,8 +82,7 @@ export default function MatrixOnePage() {
               V1 STANCE
             </h2>
             <p style={{ marginTop: 10, opacity: 0.65, lineHeight: 1.55, fontSize: 13 }}>
-              Wi-Fi only. Portrait-first. Reduced sensor surface (no consumer camera/GPS posture in
-              V1 concept).
+              Wi-Fi only (V1 target). Portrait-only (V1 target). Reduced sensor surface (V1 target).
             </p>
           </section>
 

@@ -36,8 +36,9 @@ export default function MatrixOSPage() {
         </h1>
 
         <p style={{ marginTop: 14, opacity: 0.7, lineHeight: 1.6, maxWidth: 760 }}>
-          MatrixOS is a sealed operating system designed for financial execution. It is not a
-          consumer mobile OS, not an app ecosystem, and not a general computing platform.
+          MatrixOS is a sealed operating system designed for constrained
+          execution on dedicated hardware. It is not a consumer mobile OS, not
+          an app ecosystem, and not a general computing platform.
         </p>
 
         <div
@@ -66,8 +67,8 @@ export default function MatrixOSPage() {
               WHAT IT IS
             </h2>
             <p style={{ marginTop: 10, opacity: 0.65, lineHeight: 1.55, fontSize: 13 }}>
-              A purpose-built operating system that runs a single execution interface inside a
-              controlled environment.
+              A purpose-built operating system that runs a single execution
+              interface inside a controlled environment.
             </p>
           </section>
 
@@ -82,8 +83,9 @@ export default function MatrixOSPage() {
               WHY IT EXISTS
             </h2>
             <p style={{ marginTop: 10, opacity: 0.65, lineHeight: 1.55, fontSize: 13 }}>
-              Modern financial products optimize for engagement. MatrixOS optimizes for control by
-              reducing surface area, background activity, and noise.
+              To provide a deterministic execution environment by reducing
+              background activity, external dependencies, and interface
+              complexity.
             </p>
           </section>
 
@@ -98,14 +100,14 @@ export default function MatrixOSPage() {
               PRINCIPLES
             </h2>
             <p style={{ marginTop: 10, opacity: 0.65, lineHeight: 1.55, fontSize: 13 }}>
-              Single-purpose. No external wallets. No third-party apps. Minimal network exposure.
-              Auditable action trail.
+              Single-purpose. No external custody interfaces. No third-party
+              applications. Minimal network exposure. Auditable action trail.
             </p>
           </section>
         </div>
 
         <div style={{ marginTop: 18, fontSize: 11, letterSpacing: "0.25em", opacity: 0.35 }}>
-          DEVELOPMENT BUILD · SPECS SUBJECT TO CHANGE
+          DEVELOPMENT BUILD · SPECIFICATIONS SUBJECT TO CHANGE
         </div>
       </div>
     </main>

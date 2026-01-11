@@ -82,8 +82,8 @@ export default function SecurityPage() {
               DEVICE VS MIRROR
             </h2>
             <p style={{ marginTop: 10, opacity: 0.65, lineHeight: 1.55, fontSize: 13 }}>
-              The device handles execution. The Mirror app handles identity, funding rails, and
-              jurisdictional requirements. Responsibilities are intentionally separated.
+              The device handles execution. The Mirror app handles identity and funding workflows.
+              Responsibilities are intentionally separated.
             </p>
           </section>
 

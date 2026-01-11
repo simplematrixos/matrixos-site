@@ -66,8 +66,8 @@ export default function SimplePage() {
               V1 CAPABILITIES
             </h2>
             <p style={{ marginTop: 10, opacity: 0.65, lineHeight: 1.55, fontSize: 13 }}>
-              Buy and sell supported internal assets (economic exposure). View balances. Internal
-              send and internal request. View ledger and trace events.
+              Execute conversions for supported internal exposures. View balances. Internal send and
+              internal request. View ledger and trace events.
             </p>
           </section>
 
@@ -82,8 +82,8 @@ export default function SimplePage() {
               WHAT IT DOES NOT DO
             </h2>
             <p style={{ marginTop: 10, opacity: 0.65, lineHeight: 1.55, fontSize: 13 }}>
-              No external wallet addresses on device. No external chain deposits. No background
-              notifications. No app ecosystem.
+              No external deposit addresses on device. No direct external chain deposits. No
+              background notifications. No app ecosystem.
             </p>
           </section>
 
@@ -114,8 +114,8 @@ export default function SimplePage() {
               WITHDRAW MODEL
             </h2>
             <p style={{ marginTop: 10, opacity: 0.65, lineHeight: 1.55, fontSize: 13 }}>
-              Withdrawals are initiated on device but executed through the Mirror app for identity,
-              funding rails, and jurisdictional requirements.
+              Withdrawals are initiated on device but executed through the Mirror app for identity
+              and funding workflows. Responsibilities are intentionally separated.
             </p>
           </section>
         </div>

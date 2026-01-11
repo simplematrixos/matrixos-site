@@ -36,9 +36,11 @@ export default function AboutPage() {
         </h1>
 
         <p style={{ marginTop: 14, opacity: 0.7, lineHeight: 1.6, maxWidth: 820 }}>
-          MatrixOS Infrastructure, Inc. is building a hardware-first financial execution system.
-          MatrixOS, Matrix One, and SIMPLE are in active development. This site does not make
-          claims of institutional clients, regulatory approval, or guaranteed timelines.
+          MatrixOS Infrastructure, Inc. develops constrained execution systems
+          designed for use on dedicated hardware. MatrixOS, Matrix One, and
+          SIMPLE are in active development. This site does not make claims of
+          institutional adoption, regulatory status, or fixed delivery
+          timelines.
         </p>
 
         <div
@@ -82,7 +84,8 @@ export default function AboutPage() {
               STATUS
             </h2>
             <p style={{ marginTop: 10, opacity: 0.65, lineHeight: 1.55, fontSize: 13 }}>
-              Early-stage. Active development. Specifications and behavior subject to change.
+              Early-stage. Active development. Specifications and behavior are
+              subject to change.
             </p>
           </section>
 
@@ -97,8 +100,9 @@ export default function AboutPage() {
               DEVELOPMENT
             </h2>
             <p style={{ marginTop: 10, opacity: 0.65, lineHeight: 1.55, fontSize: 13 }}>
-              Hardware and software are developed in parallel. The product posture is device-first
-              with separation of concerns between device execution and Mirror app services.
+              Hardware and software are developed in parallel. The system posture
+              is device-first, with separation between on-device execution and
+              companion service interfaces.
             </p>
           </section>
 
@@ -113,7 +117,7 @@ export default function AboutPage() {
               CONTACT
             </h2>
             <p style={{ marginTop: 10, opacity: 0.65, lineHeight: 1.55, fontSize: 13 }}>
-              Add a contact email here (public-facing). Avoid investor solicitation language.
+              General correspondence: info@matrixos.io
             </p>
           </section>
         </div>
