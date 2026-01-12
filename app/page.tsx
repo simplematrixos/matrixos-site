@@ -288,6 +288,7 @@ export default function HomePage() {
           align-items: center;
         }
 
+        /* Home footer model */
         .footer{
           margin-top: 12px;
           font-size: 11px;
@@ -296,11 +297,7 @@ export default function HomePage() {
           text-align: center;
           line-height: 1.35;
         }
-
-        /* Mobile: split "SUBJECT TO CHANGE" under first line and center both */
-        .footer .line2{
-          display: inline;
-        }
+        .footer .line2{ display: inline; }
         @media (max-width: 640px) {
           :root{
             --stageH: clamp(420px, 70vh, 620px);
@@ -311,22 +308,27 @@ export default function HomePage() {
           }
         }
 
-        /* X link below footer, centered */
+        /* X icon (same slot we'll use on every page) */
         .xLink{
-          margin-top: 10px;
+          margin-top: 12px;
+          width: 26px;
+          height: 26px;
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          opacity: 0.55;
           text-decoration: none;
           color: inherit;
-          opacity: 0.55;
-          font-size: 12px;
-          letter-spacing: 0.12em;
-          line-height: 1;
           -webkit-tap-highlight-color: transparent;
         }
-        .xLink:active{
-          opacity: 0.85;
-        }
+        .xLink:active{ opacity: 0.85; }
         @media (hover: hover) {
-          .xLink:hover{ opacity: 0.85; }
+          .xLink:hover{ opacity: 0.78; }
+        }
+        .xLink:focus-visible{
+          outline: none;
+          box-shadow: 0 0 0 6px rgba(255,255,255,0.08);
+          border-radius: 999px;
         }
       `}</style>
 
@@ -410,8 +412,17 @@ export default function HomePage() {
             target="_blank"
             rel="noopener noreferrer"
             aria-label="MatrixOS on X"
+            title="MatrixOS on X"
           >
-            X
+            <svg
+              width="18"
+              height="18"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+              aria-hidden="true"
+            >
+              <path d="M18.244 2H21.6l-7.33 8.382L22.8 22h-6.62l-5.186-6.64L5.19 22H1.83l7.85-8.97L1.2 2h6.78l4.684 6.01L18.244 2Zm-1.16 18h1.86L6.87 3.93H4.88L17.084 20Z" />
+            </svg>
           </a>
         </div>
       </div>
