@@ -310,6 +310,24 @@ export default function HomePage() {
             margin-top: 6px;
           }
         }
+
+        /* X link below footer, centered */
+        .xLink{
+          margin-top: 10px;
+          text-decoration: none;
+          color: inherit;
+          opacity: 0.55;
+          font-size: 12px;
+          letter-spacing: 0.12em;
+          line-height: 1;
+          -webkit-tap-highlight-color: transparent;
+        }
+        .xLink:active{
+          opacity: 0.85;
+        }
+        @media (hover: hover) {
+          .xLink:hover{ opacity: 0.85; }
+        }
       `}</style>
 
       <div className="wrap">
@@ -385,6 +403,16 @@ export default function HomePage() {
           <div className="footer">
             SEALED · DEVICE-FIRST · <span className="line2">SUBJECT TO CHANGE</span>
           </div>
+
+          <a
+            className="xLink"
+            href="https://x.com/MatrixOSio"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="MatrixOS on X"
+          >
+            X
+          </a>
         </div>
       </div>
     </main>
