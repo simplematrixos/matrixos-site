@@ -1,5 +1,8 @@
 // app/page.tsx
+"use client";
+
 import Link from "next/link";
+import React, { useCallback, useState } from "react";
 
 type HomeNavItem = {
   label: string;
@@ -18,6 +21,19 @@ const RING: HomeNavItem[] = [
 
 export default function HomePage() {
   const N = RING.length;
+  const [touchReveal, setTouchReveal] = useState(false);
+
+  const onTouchStart = useCallback(() => {
+    setTouchReveal(true);
+  }, []);
+
+  const onTouchEnd = useCallback(() => {
+    setTouchReveal(false);
+  }, []);
+
+  const onTouchCancel = useCallback(() => {
+    setTouchReveal(false);
+  }, []);
 
   return (
     <main
@@ -35,12 +51,13 @@ export default function HomePage() {
     >
       <style>{`
         :root{
-          --logoDesktop: 280px;
-          --logoMobile: 200px;
+          /* Logo: +~10% */
+          --logoDesktop: 308px;
+          --logoMobile: 220px;
 
-          /* ring radius (logo center -> dot center) */
-          --ringDesktop: 190px;
-          --ringMobile: 140px;
+          /* Ring radius: -~12% */
+          --ringDesktop: 167px;
+          --ringMobile: 123px;
 
           --dotDesktop: 14px;
           --dotMobile: 12px;
@@ -48,7 +65,7 @@ export default function HomePage() {
           --logoW: clamp(var(--logoMobile), 22vw, var(--logoDesktop));
           --ringR: clamp(
             var(--ringMobile),
-            calc(var(--logoW) * 0.675),
+            calc(var(--logoW) * 0.595),
             var(--ringDesktop)
           );
           --dot: clamp(var(--dotMobile), 1.3vw, var(--dotDesktop));
@@ -89,12 +106,21 @@ export default function HomePage() {
           100% { transform: scale(1); opacity: 0.92; }
         }
 
+        /* Mobile assist: labels visible briefly, then off unless pressing. */
+        @keyframes assistFade {
+          0%   { opacity: 0;   filter: blur(5px); transform: translate(-50%, calc(-50% + 22px)); }
+          18%  { opacity: 0.92; filter: blur(0px); transform: translate(-50%, calc(-50% + 18px)); }
+          78%  { opacity: 0.92; filter: blur(0px); transform: translate(-50%, calc(-50% + 18px)); }
+          100% { opacity: 0;   filter: blur(5px); transform: translate(-50%, calc(-50% + 22px)); }
+        }
+
         @media (prefers-reduced-motion: reduce) {
           .sun { animation: none !important; filter: none !important; opacity: 0.92 !important; }
           .planet:hover .dot,
           .planet:focus-visible .dot { animation: none !important; transform: none !important; }
           .planet:hover .label,
           .planet:focus-visible .label { transition: none !important; filter: none !important; }
+          .ring.assist .label { animation: none !important; opacity: 0 !important; }
         }
 
         .wrap{
@@ -129,6 +155,10 @@ export default function HomePage() {
           place-items: center;
           background: transparent !important;
           overflow: visible !important;
+
+          /* helps prevent accidental selection during press-hold */
+          user-select: none;
+          -webkit-user-select: none;
         }
 
         .sun{
@@ -209,21 +239,46 @@ export default function HomePage() {
           pointer-events:none;
         }
 
+        /* Desktop hover/keyboard */
         .planet:hover .label,
         .planet:focus-visible .label{
           opacity: 0.92;
           filter: blur(0px);
           transform: translate(-50%, calc(-50% + 18px));
         }
-
         .planet:hover .dot,
         .planet:focus-visible .dot{
           opacity: 0.92;
           animation: planetIntent 520ms ease-out 1;
         }
-
         .planet:focus-visible .dot{
           box-shadow: 0 0 0 6px rgba(255,255,255,0.08);
+        }
+
+        /* Mobile press-only labels (no hover) */
+        .planet:active .label{
+          opacity: 0.92;
+          filter: blur(0px);
+          transform: translate(-50%, calc(-50% + 18px));
+        }
+        .planet:active .dot{
+          opacity: 0.92;
+          animation: planetIntent 520ms ease-out 1;
+        }
+
+        /* One-time mobile assist */
+        .ring.assist .label{
+          animation: assistFade 1500ms ease-out 1;
+        }
+
+        /* NEW: touch-to-reveal (mobile) — show ALL labels while touching */
+        .ring.touchReveal .label{
+          opacity: 0.92;
+          filter: blur(0px);
+          transform: translate(-50%, calc(-50% + 18px));
+        }
+        .ring.touchReveal .dot{
+          opacity: 0.92;
         }
 
         .belowStage{
@@ -237,13 +292,22 @@ export default function HomePage() {
           margin-top: 12px;
           font-size: 11px;
           letter-spacing: 0.26em;
-          opacity: 0.32;
+          opacity: 0.28;
+          text-align: center;
+          line-height: 1.35;
         }
 
-        /* Mobile safety: keep stack centered and prevent clipping */
+        /* Mobile: split "SUBJECT TO CHANGE" under first line and center both */
+        .footer .line2{
+          display: inline;
+        }
         @media (max-width: 640px) {
           :root{
             --stageH: clamp(420px, 70vh, 620px);
+          }
+          .footer .line2{
+            display: block;
+            margin-top: 6px;
           }
         }
       `}</style>
@@ -251,7 +315,13 @@ export default function HomePage() {
       <div className="wrap">
         <h1 className="srOnly">MatrixOS</h1>
 
-        <div className="stage" aria-label="MatrixOS selector surface">
+        <div
+          className="stage"
+          aria-label="MatrixOS selector surface"
+          onTouchStart={onTouchStart}
+          onTouchEnd={onTouchEnd}
+          onTouchCancel={onTouchCancel}
+        >
           <img
             className="sun"
             src="/matrixos-logo.png"
@@ -259,7 +329,38 @@ export default function HomePage() {
             draggable={false}
           />
 
-          <div className="ring" aria-label="Primary navigation ring">
+          <div
+            className={`ring${touchReveal ? " touchReveal" : ""}`}
+            aria-label="Primary navigation ring"
+            ref={(el) => {
+              if (!el) return;
+              try {
+                // mobile-only assist once per day
+                const isMobile =
+                  typeof window !== "undefined" &&
+                  window.matchMedia &&
+                  window.matchMedia("(max-width: 640px)").matches;
+
+                if (!isMobile) return;
+
+                const key = "mxos_home_label_assist_v1";
+                const now = Date.now();
+                const last = Number(window.localStorage.getItem(key) || "0");
+                const oneDay = 24 * 60 * 60 * 1000;
+
+                if (now - last < oneDay) return;
+
+                window.localStorage.setItem(key, String(now));
+                el.classList.add("assist");
+
+                window.setTimeout(() => {
+                  el.classList.remove("assist");
+                }, 1550);
+              } catch {
+                // no-op (privacy mode / blocked storage)
+              }
+            }}
+          >
             {RING.map((it, i) => {
               const angle = -90 + i * (360 / N);
               const transform = `translate(-50%, -50%) rotate(${angle}deg) translate(var(--ringR)) rotate(${-angle}deg)`;
@@ -281,7 +382,9 @@ export default function HomePage() {
         </div>
 
         <div className="belowStage">
-          <div className="footer">SEALED · DEVICE-FIRST · SUBJECT TO CHANGE</div>
+          <div className="footer">
+            SEALED · DEVICE-FIRST · <span className="line2">SUBJECT TO CHANGE</span>
+          </div>
         </div>
       </div>
     </main>

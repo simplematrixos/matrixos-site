@@ -37,8 +37,8 @@ export default function AboutPage() {
 
         <p style={{ marginTop: 14, opacity: 0.7, lineHeight: 1.6, maxWidth: 820 }}>
           MatrixOS Infrastructure, Inc. develops constrained execution systems
-          designed for use on dedicated hardware. MatrixOS, Matrix One, and
-          SIMPLE are in active development. This site does not make claims of
+          designed for use on dedicated hardware. MatrixOS™ and Matrix One, and
+          SIMPLE™ are in active development. This site does not make claims of
           institutional adoption, regulatory status, or fixed delivery
           timelines.
         </p>
@@ -117,7 +117,7 @@ export default function AboutPage() {
               CONTACT
             </h2>
             <p style={{ marginTop: 10, opacity: 0.65, lineHeight: 1.55, fontSize: 13 }}>
-              General correspondence: info@matrixos.io
+              info@matrixos.io
             </p>
           </section>
         </div>
