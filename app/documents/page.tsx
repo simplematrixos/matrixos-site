@@ -35,10 +35,17 @@ export default function DocumentsPage() {
           DOCUMENTS
         </h1>
 
-        <p style={{ marginTop: 14, opacity: 0.7, lineHeight: 1.6, maxWidth: 820 }}>
-          This page provides public-facing disclosures and model descriptions for
-          MatrixOS, Matrix One, and SIMPLE. Documents are versioned and subject
-          to change. Nothing here is legal, tax, or investment advice.
+        <p
+          style={{
+            marginTop: 14,
+            opacity: 0.7,
+            lineHeight: 1.6,
+            maxWidth: 820,
+          }}
+        >
+          This page provides public-facing disclosures and model descriptions
+          for MatrixOS, Matrix One, and SIMPLE. Documents are versioned and
+          subject to change. Nothing here is legal, tax, or investment advice.
         </p>
 
         <div
@@ -63,13 +70,27 @@ export default function DocumentsPage() {
               padding: 16,
             }}
           >
-            <h2 style={{ margin: 0, fontSize: 12, letterSpacing: "0.25em", opacity: 0.85 }}>
-              INTERNAL LEDGER MODEL (V1)
+            <h2
+              style={{
+                margin: 0,
+                fontSize: 12,
+                letterSpacing: "0.25em",
+                opacity: 0.85,
+              }}
+            >
+              INTERNAL LEDGER MODEL
             </h2>
-            <p style={{ marginTop: 10, opacity: 0.65, lineHeight: 1.55, fontSize: 13 }}>
+            <p
+              style={{
+                marginTop: 10,
+                opacity: 0.65,
+                lineHeight: 1.55,
+                fontSize: 13,
+              }}
+            >
               SIMPLE balances represent economic exposure tracked on an internal
               ledger. The device does not present external wallet addresses or
-              on-chain custody surfaces in V1.
+              on-chain custody surfaces.
             </p>
           </section>
 
@@ -80,12 +101,26 @@ export default function DocumentsPage() {
               padding: 16,
             }}
           >
-            <h2 style={{ margin: 0, fontSize: 12, letterSpacing: "0.25em", opacity: 0.85 }}>
-              WHAT USERS RECEIVE (V1)
+            <h2
+              style={{
+                margin: 0,
+                fontSize: 12,
+                letterSpacing: "0.25em",
+                opacity: 0.85,
+              }}
+            >
+              WHAT USERS RECEIVE
             </h2>
-            <p style={{ marginTop: 10, opacity: 0.65, lineHeight: 1.55, fontSize: 13 }}>
+            <p
+              style={{
+                marginTop: 10,
+                opacity: 0.65,
+                lineHeight: 1.55,
+                fontSize: 13,
+              }}
+            >
               A constrained on-device execution interface, internal records, and
-              controlled settlement behavior for supported functionality in V1.
+              controlled settlement behavior for supported functionality.
             </p>
           </section>
 
@@ -96,33 +131,39 @@ export default function DocumentsPage() {
               padding: 16,
             }}
           >
-            <h2 style={{ margin: 0, fontSize: 12, letterSpacing: "0.25em", opacity: 0.85 }}>
-              WHAT USERS DO NOT RECEIVE (V1)
+            <h2
+              style={{
+                margin: 0,
+                fontSize: 12,
+                letterSpacing: "0.25em",
+                opacity: 0.85,
+              }}
+            >
+              WHAT USERS DO NOT RECEIVE
             </h2>
-            <p style={{ marginTop: 10, opacity: 0.65, lineHeight: 1.55, fontSize: 13 }}>
+            <p
+              style={{
+                marginTop: 10,
+                opacity: 0.65,
+                lineHeight: 1.55,
+                fontSize: 13,
+              }}
+            >
               No on-device external deposit addresses. No direct external chain
               receive. No claims of “unhackable” or “military-grade.” No
               guarantees of availability or redemption time.
             </p>
           </section>
-
-          <section
-            style={{
-              border: "1px solid rgba(255,255,255,0.10)",
-              borderRadius: 18,
-              padding: 16,
-            }}
-          >
-            <h2 style={{ margin: 0, fontSize: 12, letterSpacing: "0.25em", opacity: 0.85 }}>
-              CONTACT
-            </h2>
-            <p style={{ marginTop: 10, opacity: 0.65, lineHeight: 1.55, fontSize: 13 }}>
-              Document corrections and inquiries: info@matrixos.io
-            </p>
-          </section>
         </div>
 
-        <div style={{ marginTop: 18, fontSize: 11, letterSpacing: "0.25em", opacity: 0.35 }}>
+        <div
+          style={{
+            marginTop: 18,
+            fontSize: 11,
+            letterSpacing: "0.25em",
+            opacity: 0.35,
+          }}
+        >
           VERSIONED DISCLOSURES · SUBJECT TO CHANGE
         </div>
       </div>

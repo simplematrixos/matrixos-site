@@ -35,9 +35,17 @@ export default function MatrixOnePage() {
           MATRIX ONE
         </h1>
 
-        <p style={{ marginTop: 14, opacity: 0.7, lineHeight: 1.6, maxWidth: 760 }}>
-          Matrix One is a dedicated physical unit designed to run MatrixOS as a sealed execution
-          environment. It is not a phone, not a general computer, and not a consumer app platform.
+        <p
+          style={{
+            marginTop: 14,
+            opacity: 0.7,
+            lineHeight: 1.6,
+            maxWidth: 760,
+          }}
+        >
+          Matrix One is a dedicated physical unit designed to run MatrixOS as a
+          sealed execution environment. It is not a phone, not a general
+          computer, and not a consumer app platform.
         </p>
 
         <div
@@ -62,12 +70,26 @@ export default function MatrixOnePage() {
               padding: 16,
             }}
           >
-            <h2 style={{ margin: 0, fontSize: 12, letterSpacing: "0.25em", opacity: 0.85 }}>
+            <h2
+              style={{
+                margin: 0,
+                fontSize: 12,
+                letterSpacing: "0.25em",
+                opacity: 0.85,
+              }}
+            >
               PURPOSE
             </h2>
-            <p style={{ marginTop: 10, opacity: 0.65, lineHeight: 1.55, fontSize: 13 }}>
-              A single-purpose execution instrument that boots into SIMPLE. No app installs.
-              No multitasking. No general-purpose OS surface.
+            <p
+              style={{
+                marginTop: 10,
+                opacity: 0.65,
+                lineHeight: 1.55,
+                fontSize: 13,
+              }}
+            >
+              A single-purpose execution instrument that boots into SIMPLE. No
+              app installs. No multitasking. No general-purpose OS surface.
             </p>
           </section>
 
@@ -78,11 +100,27 @@ export default function MatrixOnePage() {
               padding: 16,
             }}
           >
-            <h2 style={{ margin: 0, fontSize: 12, letterSpacing: "0.25em", opacity: 0.85 }}>
-              V1 STANCE
+            <h2
+              style={{
+                margin: 0,
+                fontSize: 12,
+                letterSpacing: "0.25em",
+                opacity: 0.85,
+              }}
+            >
+              DEVICE POSTURE
             </h2>
-            <p style={{ marginTop: 10, opacity: 0.65, lineHeight: 1.55, fontSize: 13 }}>
-              Wi-Fi only (V1 target). Portrait-only (V1 target). Reduced sensor surface (V1 target).
+            <p
+              style={{
+                marginTop: 10,
+                opacity: 0.65,
+                lineHeight: 1.55,
+                fontSize: 13,
+              }}
+            >
+              Wi-Fi only target. Portrait-only target. Reduced sensor surface
+              target. Connectivity is treated as a controlled execution input,
+              not an always-on default.
             </p>
           </section>
 
@@ -93,12 +131,26 @@ export default function MatrixOnePage() {
               padding: 16,
             }}
           >
-            <h2 style={{ margin: 0, fontSize: 12, letterSpacing: "0.25em", opacity: 0.85 }}>
+            <h2
+              style={{
+                margin: 0,
+                fontSize: 12,
+                letterSpacing: "0.25em",
+                opacity: 0.85,
+              }}
+            >
               CONNECTIVITY MODEL
             </h2>
-            <p style={{ marginTop: 10, opacity: 0.65, lineHeight: 1.55, fontSize: 13 }}>
-              Designed to be cold by default and connected only when needed for execution and
-              settlement workflows.
+            <p
+              style={{
+                marginTop: 10,
+                opacity: 0.65,
+                lineHeight: 1.55,
+                fontSize: 13,
+              }}
+            >
+              Designed to be cold by default and connected only when needed for
+              execution and settlement workflows.
             </p>
           </section>
 
@@ -109,17 +161,38 @@ export default function MatrixOnePage() {
               padding: 16,
             }}
           >
-            <h2 style={{ margin: 0, fontSize: 12, letterSpacing: "0.25em", opacity: 0.85 }}>
+            <h2
+              style={{
+                margin: 0,
+                fontSize: 12,
+                letterSpacing: "0.25em",
+                opacity: 0.85,
+              }}
+            >
               STATUS
             </h2>
-            <p style={{ marginTop: 10, opacity: 0.65, lineHeight: 1.55, fontSize: 13 }}>
-              Concept hardware. Specifications subject to change during engineering and compliance
-              reviews.
+            <p
+              style={{
+                marginTop: 10,
+                opacity: 0.65,
+                lineHeight: 1.55,
+                fontSize: 13,
+              }}
+            >
+              Concept hardware. Specifications subject to change during
+              engineering and compliance reviews.
             </p>
           </section>
         </div>
 
-        <div style={{ marginTop: 18, fontSize: 11, letterSpacing: "0.25em", opacity: 0.35 }}>
+        <div
+          style={{
+            marginTop: 18,
+            fontSize: 11,
+            letterSpacing: "0.25em",
+            opacity: 0.35,
+          }}
+        >
           CONCEPT HARDWARE · SUBJECT TO CHANGE
         </div>
       </div>
