@@ -42,16 +42,16 @@ export default function AboutPage() {
         }
 
         .mxXLink{
-          margin-top: 14px; /* hierarchy breathing room (statement → exit link) */
+          margin-top: 14px;
           width: 26px;
           height: 26px;
           display: inline-flex;
           align-items: center;
           justify-content: center;
-          opacity: 0.45; /* low-contrast idle */
+          opacity: 0.45;
           text-decoration: none;
           color: inherit;
-          cursor: pointer; /* cursor is the explicit clickable signal */
+          cursor: pointer;
           transition: opacity 180ms ease, filter 180ms ease;
           -webkit-tap-highlight-color: transparent;
         }
@@ -93,10 +93,10 @@ export default function AboutPage() {
         </h1>
 
         <p style={{ marginTop: 14, opacity: 0.7, lineHeight: 1.6, maxWidth: 820 }}>
-          MatrixOS Infrastructure, Inc. develops constrained execution systems
-          designed for use on dedicated hardware. MatrixOS™ and Matrix One, and
-          SIMPLE™ are in active development. This site does not make claims of
-          institutional adoption, regulatory status, or fixed delivery timelines.
+          MatrixOS Infrastructure, Inc. develops constrained execution systems designed for use on dedicated hardware.
+          MatrixOS Infrastructure, Inc. is incorporated in Delaware and maintains its principal operations in the United States.
+          MatrixOS™, Matrix One, and SIMPLE™ are in active development. This site does not make claims of institutional adoption,
+          regulatory status, or fixed delivery timelines.
         </p>
 
         <div
@@ -176,7 +176,6 @@ export default function AboutPage() {
           </section>
         </div>
 
-        {/* Footer slot (match Home behavior) + X icon centered */}
         <div className="mxFooter">
           <div className="mxFooterText">
             SEALED · DEVICE-FIRST · <span className="line2">SUBJECT TO CHANGE</span>
