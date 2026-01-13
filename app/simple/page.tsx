@@ -40,18 +40,33 @@ export default function SimplePage() {
             margin-top: 6px;
           }
         }
+
         .mxXLink{
-          margin-top: 12px;
+          margin-top: 14px; /* hierarchy breathing room (statement → exit link) */
           width: 26px;
           height: 26px;
           display: inline-flex;
           align-items: center;
           justify-content: center;
-          opacity: 0.55;
+          opacity: 0.45; /* low-contrast idle */
           text-decoration: none;
           color: inherit;
+          cursor: pointer; /* cursor is the explicit clickable signal */
+          transition: opacity 180ms ease, filter 180ms ease;
+          -webkit-tap-highlight-color: transparent;
         }
-        .mxXLink:hover{ opacity: 0.78; }
+
+        @media (hover: hover) {
+          .mxXLink:hover{
+            opacity: 0.75;
+            filter: drop-shadow(0 0 6px rgba(255,255,255,0.12));
+          }
+        }
+
+        .mxXLink:active{
+          opacity: 0.78;
+        }
+
         .mxXLink:focus-visible{
           outline: none;
           box-shadow: 0 0 0 6px rgba(255,255,255,0.08);
@@ -77,10 +92,17 @@ export default function SimplePage() {
           SIMPLE
         </h1>
 
-        <p style={{ marginTop: 14, opacity: 0.7, lineHeight: 1.6, maxWidth: 760 }}>
-          SIMPLE is the in-OS execution interface on MatrixOS. It is designed as a
-          single surface: one flow at a time, minimal background activity, and a
-          consistent audit posture.
+        <p
+          style={{
+            marginTop: 14,
+            opacity: 0.7,
+            lineHeight: 1.6,
+            maxWidth: 760,
+          }}
+        >
+          SIMPLE is the in-OS execution interface on MatrixOS. It is designed as
+          a single surface: one flow at a time, minimal background activity, and
+          a consistent audit posture.
         </p>
 
         <div
@@ -123,8 +145,9 @@ export default function SimplePage() {
                 fontSize: 13,
               }}
             >
-              Execute conversions for supported internal exposures. View balances.
-              Internal send and internal request. View ledger and trace events.
+              Execute conversions for supported internal exposures. View
+              balances. Internal send and internal request. View ledger and
+              trace events.
             </p>
           </section>
 
@@ -213,8 +236,8 @@ export default function SimplePage() {
                 fontSize: 13,
               }}
             >
-              Withdrawals are initiated on device and executed through the Mirror
-              app when required for identity and funding workflows.
+              Withdrawals are initiated on device and executed through the
+              Mirror app when required for identity and funding workflows.
               Responsibilities are intentionally separated.
             </p>
           </section>
@@ -230,9 +253,8 @@ export default function SimplePage() {
             className="mxXLink"
             href="https://x.com/MatrixOSio"
             target="_blank"
-            rel="noreferrer"
+            rel="noopener noreferrer"
             aria-label="MatrixOS on X"
-            title="MatrixOS on X"
           >
             <svg
               width="18"

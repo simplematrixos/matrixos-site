@@ -40,18 +40,33 @@ export default function SecurityPage() {
             margin-top: 6px;
           }
         }
+
         .mxXLink{
-          margin-top: 12px;
+          margin-top: 14px; /* hierarchy breathing room (statement → exit link) */
           width: 26px;
           height: 26px;
           display: inline-flex;
           align-items: center;
           justify-content: center;
-          opacity: 0.55;
+          opacity: 0.45; /* low-contrast idle */
           text-decoration: none;
           color: inherit;
+          cursor: pointer; /* cursor is the explicit clickable signal */
+          transition: opacity 180ms ease, filter 180ms ease;
+          -webkit-tap-highlight-color: transparent;
         }
-        .mxXLink:hover{ opacity: 0.78; }
+
+        @media (hover: hover) {
+          .mxXLink:hover{
+            opacity: 0.75;
+            filter: drop-shadow(0 0 6px rgba(255,255,255,0.12));
+          }
+        }
+
+        .mxXLink:active{
+          opacity: 0.78;
+        }
+
         .mxXLink:focus-visible{
           outline: none;
           box-shadow: 0 0 0 6px rgba(255,255,255,0.08);
@@ -77,9 +92,17 @@ export default function SecurityPage() {
           SECURITY
         </h1>
 
-        <p style={{ marginTop: 14, opacity: 0.7, lineHeight: 1.6, maxWidth: 760 }}>
-          MatrixOS approaches security through architectural reduction rather than feature density.
-          The system is designed to minimize attack surface, background activity, and ambiguity.
+        <p
+          style={{
+            marginTop: 14,
+            opacity: 0.7,
+            lineHeight: 1.6,
+            maxWidth: 760,
+          }}
+        >
+          MatrixOS approaches security through architectural reduction rather than
+          feature density. The system is designed to minimize attack surface,
+          background activity, and ambiguity.
         </p>
 
         <div
@@ -104,12 +127,27 @@ export default function SecurityPage() {
               padding: 16,
             }}
           >
-            <h2 style={{ margin: 0, fontSize: 12, letterSpacing: "0.25em", opacity: 0.85 }}>
+            <h2
+              style={{
+                margin: 0,
+                fontSize: 12,
+                letterSpacing: "0.25em",
+                opacity: 0.85,
+              }}
+            >
               REDUCTION-FIRST
             </h2>
-            <p style={{ marginTop: 10, opacity: 0.65, lineHeight: 1.55, fontSize: 13 }}>
-              No third-party apps. No background services. No general-purpose multitasking. Security
-              is achieved by removing entire classes of risk.
+            <p
+              style={{
+                marginTop: 10,
+                opacity: 0.65,
+                lineHeight: 1.55,
+                fontSize: 13,
+              }}
+            >
+              No third-party apps. No background services. No general-purpose
+              multitasking. Security is achieved by removing entire classes of
+              risk.
             </p>
           </section>
 
@@ -120,12 +158,26 @@ export default function SecurityPage() {
               padding: 16,
             }}
           >
-            <h2 style={{ margin: 0, fontSize: 12, letterSpacing: "0.25em", opacity: 0.85 }}>
+            <h2
+              style={{
+                margin: 0,
+                fontSize: 12,
+                letterSpacing: "0.25em",
+                opacity: 0.85,
+              }}
+            >
               DEVICE VS MIRROR
             </h2>
-            <p style={{ marginTop: 10, opacity: 0.65, lineHeight: 1.55, fontSize: 13 }}>
-              The device handles execution. The Mirror app handles identity and funding workflows.
-              Responsibilities are intentionally separated.
+            <p
+              style={{
+                marginTop: 10,
+                opacity: 0.65,
+                lineHeight: 1.55,
+                fontSize: 13,
+              }}
+            >
+              The device handles execution. The Mirror app handles identity and
+              funding workflows. Responsibilities are intentionally separated.
             </p>
           </section>
 
@@ -136,12 +188,26 @@ export default function SecurityPage() {
               padding: 16,
             }}
           >
-            <h2 style={{ margin: 0, fontSize: 12, letterSpacing: "0.25em", opacity: 0.85 }}>
+            <h2
+              style={{
+                margin: 0,
+                fontSize: 12,
+                letterSpacing: "0.25em",
+                opacity: 0.85,
+              }}
+            >
               CONTROLLED CONNECTIVITY
             </h2>
-            <p style={{ marginTop: 10, opacity: 0.65, lineHeight: 1.55, fontSize: 13 }}>
-              Network connectivity is limited and intended to be inactive when the device is idle.
-              Silent wake behavior avoids ambient signaling.
+            <p
+              style={{
+                marginTop: 10,
+                opacity: 0.65,
+                lineHeight: 1.55,
+                fontSize: 13,
+              }}
+            >
+              Network connectivity is limited and intended to be inactive when
+              the device is idle. Silent wake behavior avoids ambient signaling.
             </p>
           </section>
 
@@ -152,12 +218,27 @@ export default function SecurityPage() {
               padding: 16,
             }}
           >
-            <h2 style={{ margin: 0, fontSize: 12, letterSpacing: "0.25em", opacity: 0.85 }}>
+            <h2
+              style={{
+                margin: 0,
+                fontSize: 12,
+                letterSpacing: "0.25em",
+                opacity: 0.85,
+              }}
+            >
               AUDIT POSTURE
             </h2>
-            <p style={{ marginTop: 10, opacity: 0.65, lineHeight: 1.55, fontSize: 13 }}>
-              Consequential actions generate internal records (REGISTRO) or security events (RASTRO)
-              to support traceability without exposing implementation detail.
+            <p
+              style={{
+                marginTop: 10,
+                opacity: 0.65,
+                lineHeight: 1.55,
+                fontSize: 13,
+              }}
+            >
+              Consequential actions generate internal records (REGISTRO) or
+              security events (RASTRO) to support traceability without exposing
+              implementation detail.
             </p>
           </section>
         </div>
@@ -172,9 +253,8 @@ export default function SecurityPage() {
             className="mxXLink"
             href="https://x.com/MatrixOSio"
             target="_blank"
-            rel="noreferrer"
+            rel="noopener noreferrer"
             aria-label="MatrixOS on X"
-            title="MatrixOS on X"
           >
             <svg
               width="18"

@@ -308,22 +308,27 @@ export default function HomePage() {
           }
         }
 
-        /* X icon (same slot we'll use on every page) */
+        /* X icon (locked behavior: icon-only, no tooltip, cursor-only affordance) */
         .xLink{
-          margin-top: 12px;
+          margin-top: 14px; /* extra breathing room between statement → exit link */
           width: 26px;
           height: 26px;
           display: inline-flex;
           align-items: center;
           justify-content: center;
-          opacity: 0.55;
+          opacity: 0.45; /* lower-contrast idle */
           text-decoration: none;
           color: inherit;
+          cursor: pointer; /* explicit clickable signal */
+          transition: opacity 180ms ease, filter 180ms ease;
           -webkit-tap-highlight-color: transparent;
         }
-        .xLink:active{ opacity: 0.85; }
+        .xLink:active{ opacity: 0.78; }
         @media (hover: hover) {
-          .xLink:hover{ opacity: 0.78; }
+          .xLink:hover{
+            opacity: 0.75;
+            filter: drop-shadow(0 0 6px rgba(255,255,255,0.12));
+          }
         }
         .xLink:focus-visible{
           outline: none;
@@ -403,7 +408,8 @@ export default function HomePage() {
 
         <div className="belowStage">
           <div className="footer">
-            SEALED · DEVICE-FIRST · <span className="line2">SUBJECT TO CHANGE</span>
+            SEALED · DEVICE-FIRST ·{" "}
+            <span className="line2">SUBJECT TO CHANGE</span>
           </div>
 
           <a
@@ -412,7 +418,6 @@ export default function HomePage() {
             target="_blank"
             rel="noopener noreferrer"
             aria-label="MatrixOS on X"
-            title="MatrixOS on X"
           >
             <svg
               width="18"

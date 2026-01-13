@@ -40,18 +40,33 @@ export default function MatrixOSPage() {
             margin-top: 6px;
           }
         }
+
         .mxXLink{
-          margin-top: 12px;
+          margin-top: 14px; /* hierarchy breathing room (statement → exit link) */
           width: 26px;
           height: 26px;
           display: inline-flex;
           align-items: center;
           justify-content: center;
-          opacity: 0.55;
+          opacity: 0.45; /* low-contrast idle */
           text-decoration: none;
           color: inherit;
+          cursor: pointer; /* cursor is the explicit clickable signal */
+          transition: opacity 180ms ease, filter 180ms ease;
+          -webkit-tap-highlight-color: transparent;
         }
-        .mxXLink:hover{ opacity: 0.78; }
+
+        @media (hover: hover) {
+          .mxXLink:hover{
+            opacity: 0.75;
+            filter: drop-shadow(0 0 6px rgba(255,255,255,0.12));
+          }
+        }
+
+        .mxXLink:active{
+          opacity: 0.78;
+        }
+
         .mxXLink:focus-visible{
           outline: none;
           box-shadow: 0 0 0 6px rgba(255,255,255,0.08);
@@ -77,7 +92,14 @@ export default function MatrixOSPage() {
           MATRIXOS
         </h1>
 
-        <p style={{ marginTop: 14, opacity: 0.7, lineHeight: 1.6, maxWidth: 760 }}>
+        <p
+          style={{
+            marginTop: 14,
+            opacity: 0.7,
+            lineHeight: 1.6,
+            maxWidth: 760,
+          }}
+        >
           MatrixOS is a sealed operating system designed for constrained
           execution on dedicated hardware. It is not a consumer mobile OS, not
           an app ecosystem, and not a general computing platform.
@@ -105,10 +127,24 @@ export default function MatrixOSPage() {
               padding: 16,
             }}
           >
-            <h2 style={{ margin: 0, fontSize: 12, letterSpacing: "0.25em", opacity: 0.85 }}>
+            <h2
+              style={{
+                margin: 0,
+                fontSize: 12,
+                letterSpacing: "0.25em",
+                opacity: 0.85,
+              }}
+            >
               WHAT IT IS
             </h2>
-            <p style={{ marginTop: 10, opacity: 0.65, lineHeight: 1.55, fontSize: 13 }}>
+            <p
+              style={{
+                marginTop: 10,
+                opacity: 0.65,
+                lineHeight: 1.55,
+                fontSize: 13,
+              }}
+            >
               A purpose-built operating system that runs a single execution
               interface inside a controlled environment.
             </p>
@@ -121,10 +157,24 @@ export default function MatrixOSPage() {
               padding: 16,
             }}
           >
-            <h2 style={{ margin: 0, fontSize: 12, letterSpacing: "0.25em", opacity: 0.85 }}>
+            <h2
+              style={{
+                margin: 0,
+                fontSize: 12,
+                letterSpacing: "0.25em",
+                opacity: 0.85,
+              }}
+            >
               WHY IT EXISTS
             </h2>
-            <p style={{ marginTop: 10, opacity: 0.65, lineHeight: 1.55, fontSize: 13 }}>
+            <p
+              style={{
+                marginTop: 10,
+                opacity: 0.65,
+                lineHeight: 1.55,
+                fontSize: 13,
+              }}
+            >
               To provide a deterministic execution environment by reducing
               background activity, external dependencies, and interface
               complexity.
@@ -138,10 +188,24 @@ export default function MatrixOSPage() {
               padding: 16,
             }}
           >
-            <h2 style={{ margin: 0, fontSize: 12, letterSpacing: "0.25em", opacity: 0.85 }}>
+            <h2
+              style={{
+                margin: 0,
+                fontSize: 12,
+                letterSpacing: "0.25em",
+                opacity: 0.85,
+              }}
+            >
               PRINCIPLES
             </h2>
-            <p style={{ marginTop: 10, opacity: 0.65, lineHeight: 1.55, fontSize: 13 }}>
+            <p
+              style={{
+                marginTop: 10,
+                opacity: 0.65,
+                lineHeight: 1.55,
+                fontSize: 13,
+              }}
+            >
               Single-purpose. No external custody interfaces. No third-party
               applications. Minimal network exposure. Auditable action trail.
             </p>
@@ -158,9 +222,8 @@ export default function MatrixOSPage() {
             className="mxXLink"
             href="https://x.com/MatrixOSio"
             target="_blank"
-            rel="noreferrer"
+            rel="noopener noreferrer"
             aria-label="MatrixOS on X"
-            title="MatrixOS on X"
           >
             <svg
               width="18"
